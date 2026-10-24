@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cvnmifyusf4v2"]
+
+[ext_resource type="Script" uid="uid://r8iyg1jo0xo4" path="res://scripts/enemy.gd" id="1_f87vc"]
+[ext_resource type="Texture2D" uid="uid://cnwq0o223nbt3" path="res://art/enemy.png" id="2_f87vc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2fvbb"]
+radius = 15.784
+height = 31.568
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eqrm3"]
+radius = 15.620498
+
+[node name="Enemy" type="CharacterBody2D" unique_id=218925964 groups=["enemies"]]
+z_index = 2
+script = ExtResource("1_f87vc")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=314798699]
+position = Vector2(12.500003, 2.5000017)
+scale = Vector2(1.1406251, 0.984375)
+texture = ExtResource("2_f87vc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1828225577]
+z_index = 2
+position = Vector2(15, 2)
+rotation = -0.664412
+shape = SubResource("CapsuleShape2D_2fvbb")
+
+[node name="AttackRange" type="Area2D" parent="CollisionShape2D" unique_id=986237871]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/AttackRange" unique_id=1785024344]
+position = Vector2(5.9604645e-07, 4.172325e-07)
+shape = SubResource("CircleShape2D_eqrm3")
+
+[connection signal="body_entered" from="CollisionShape2D/AttackRange" to="." method="_on_attack_range_body_entered"]
+[connection signal="body_exited" from="CollisionShape2D/AttackRange" to="." method="_on_attack_range_body_exited"]

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b616mf27d01k7"]
+
+[ext_resource type="Script" uid="uid://c68j6y1oh3mk7" path="res://scripts/hide_spot.gd" id="1_5kbm3"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8u16h"]
+
+[node name="HideSpotbed" type="Node2D" unique_id=1564139724]
+script = ExtResource("1_5kbm3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1037321352]
+scale = Vector2(85.99999, 594.00006)
+texture = SubResource("ViewportTexture_8u16h")
