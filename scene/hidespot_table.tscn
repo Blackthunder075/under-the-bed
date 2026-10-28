@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dgm280y2a4b1g"]
+
+[ext_resource type="Script" uid="uid://bpkacrwk6sh38" path="res://scripts/hidespot_table.gd" id="1_xfu1c"]
+[ext_resource type="Texture2D" uid="uid://b47pnga0np71" path="res://art/table.png" id="2_ke2q7"]
+
+[node name="HidespotTable" type="Node2D" unique_id=1912560587]
+script = ExtResource("1_xfu1c")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1557992699]
+position = Vector2(2.0000305, -1.9999847)
+scale = Vector2(2.5000002, 1.9375001)
+texture = ExtResource("2_ke2q7")

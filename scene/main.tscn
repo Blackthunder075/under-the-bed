@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://8l4nlv6idyn7"]
+
+[ext_resource type="Script" uid="uid://bd3c4nro5dyte" path="res://scripts/main.gd" id="1_0ha60"]
+[ext_resource type="Texture2D" uid="uid://cs1wkvumoeo5f" path="res://art/Bedroom.png" id="2_0ha60"]
+[ext_resource type="PackedScene" uid="uid://cvnmifyusf4v2" path="res://scene/enemy.tscn" id="3_p1hux"]
+[ext_resource type="PackedScene" uid="uid://cvcj144ic8s11" path="res://scene/player.tscn" id="4_of57s"]
+[ext_resource type="PackedScene" uid="uid://b616mf27d01k7" path="res://scene/hide_spot.tscn" id="5_b5f6u"]
+[ext_resource type="FontFile" path="res://brackeys_platformer_assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="6_4j5ol"]
+[ext_resource type="PackedScene" uid="uid://dkd6bh4atik4c" path="res://scene/hide_spot_shelf.tscn" id="7_of57s"]
+[ext_resource type="PackedScene" uid="uid://dgm280y2a4b1g" path="res://scene/hidespot_table.tscn" id="8_b5f6u"]
+[ext_resource type="AudioStream" uid="uid://bwo2m2lqmq40o" path="res://audio/03 - spook-fi - Spook-Fi.ogg" id="9_b5f6u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pn57m"]
+size = Vector2(679.39905, 524.5)
+
+[node name="Main" type="Node2D" unique_id=832096460]
+position = Vector2(-2, -8)
+script = ExtResource("1_0ha60")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1299641275]
+position = Vector2(634, 511)
+scale = Vector2(19.987345, 16.322435)
+texture = ExtResource("2_0ha60")
+
+[node name="Enemy" parent="." unique_id=218925964 instance=ExtResource("3_p1hux")]
+position = Vector2(879, 200)
+scale = Vector2(5.110103, 5.1174226)
+
+[node name="Player" parent="." unique_id=341361048 instance=ExtResource("4_of57s")]
+z_index = 5
+position = Vector2(254.99998, 585)
+scale = Vector2(-2.35226, 2.472849)
+
+[node name="HideSpot" parent="." unique_id=1564139724 instance=ExtResource("5_b5f6u")]
+position = Vector2(415, 539.00006)
+rotation = -0.031787775
+scale = Vector2(-0.26558703, 0.24142215)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=41680627]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD" unique_id=972483233]
+offset_left = 15.0
+offset_top = 6.0
+offset_right = 239.44865
+offset_bottom = 60.49993
+scale = Vector2(3.6311202, 5.247713)
+theme_override_constants/separation = 4
+metadata/_edit_group_ = true
+
+[node name="EnergyBar" type="ProgressBar" parent="HUD/VBoxContainer" unique_id=885085471]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9490196, 0.101960786, 0.05882353, 1)
+theme_override_fonts/font = ExtResource("6_4j5ol")
+theme_override_font_sizes/font_size = 8
+
+[node name="TimerLabel" type="Label" parent="HUD/VBoxContainer" unique_id=2140597474]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.10980392, 0, 1)
+theme_override_fonts/font = ExtResource("6_4j5ol")
+theme_override_font_sizes/font_size = 8
+
+[node name="StatusLabel" type="Label" parent="HUD/VBoxContainer" unique_id=2037072787]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_4j5ol")
+theme_override_font_sizes/font_size = 8
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=206611004]
+color = Color(0.3232125, 0.3232125, 0.3232125, 1)
+
+[node name="boundary" type="StaticBody2D" parent="." unique_id=741412369]
+position = Vector2(8, 23)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boundary" unique_id=662420113]
+position = Vector2(650, 722)
+scale = Vector2(1.9351017, 0.0936103)
+shape = SubResource("RectangleShape2D_pn57m")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="boundary" unique_id=1735873037]
+position = Vector2(673.09076, -16)
+scale = Vector2(1.9814297, -0.06390624)
+shape = SubResource("RectangleShape2D_pn57m")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="boundary" unique_id=230627916]
+position = Vector2(1296, 240)
+scale = Vector2(0.1130759, -4.3801765)
+shape = SubResource("RectangleShape2D_pn57m")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="boundary" unique_id=1218963791]
+position = Vector2(-16, 368.00003)
+scale = Vector2(0.07090166, 1.9466591)
+shape = SubResource("RectangleShape2D_pn57m")
+
+[node name="HideSpotShelf" parent="." unique_id=553048629 instance=ExtResource("7_of57s")]
+position = Vector2(926, 106)
+
+[node name="HidespotTable" parent="." unique_id=406967706 instance=ExtResource("8_b5f6u")]
+position = Vector2(182, 199)
+
+[node name="BgMusic" type="AudioStreamPlayer2D" parent="." unique_id=1061928162]
+position = Vector2(879, 200)
+scale = Vector2(5.110103, 5.1174226)
+stream = ExtResource("9_b5f6u")
+volume_db = -10.0
+autoplay = true

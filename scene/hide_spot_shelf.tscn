@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dkd6bh4atik4c"]
+
+[ext_resource type="Script" uid="uid://bqhybmh7ffaw8" path="res://scripts/hide_spot_shelf.gd" id="1_v6l7y"]
+[ext_resource type="Texture2D" uid="uid://bg6hnk87xymaw" path="res://art/shelve.png" id="2_g6jjs"]
+
+[node name="HideSpotShelf" type="Node2D" unique_id=602640289]
+script = ExtResource("1_v6l7y")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=485750264]
+position = Vector2(1.000061, 2)
+scale = Vector2(4.3593745, 3.5625)
+texture = ExtResource("2_g6jjs")
