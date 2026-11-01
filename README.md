@@ -18,7 +18,5 @@ Explore the game, face enemies, and experience a dark atmosphere inspired by the
 ## Credits
 Music: Talon Trueblood
 
-Additional asset credits will be listed here as needed.
-
 ## License
 This project's original code is released under the MIT License. Third-party assets and music remain subject to their respective licenses.
